@@ -3,4 +3,7 @@ jquery-comment
 
 It's jquery plugin for nested Comments
 
-Source, soon... :)
+Now just added a working demo.
+
+TODO: 
+- Write a complete documantation
