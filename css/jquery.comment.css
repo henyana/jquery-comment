@@ -6,6 +6,9 @@
  * Copyright 2013, hendra@kunchy.com or henyana@gmail.com
  * http://www.abelware.com
  */
+.clear{
+	clear: both;
+}
 
 .comments-display{
 
