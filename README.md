@@ -1,11 +1,10 @@
-# jquery-comment
-==============
+# [jquery-comment](http://henyana.github.io/jquery-comment)
 
 It's jquery plugin for nested Comments like the [http://disqus.com](disqus). It's using ajax request and json data as the feeds.
 
 ## Quick start
 
-Three quick start options are available:
+Two quick start options are available:
 
 * [Download the latest release](https://github.com/henyana/jquery-comment/zipball/master).
 * Clone the repo: `git clone git://github.com/henyana/jquery-comment.git`.
