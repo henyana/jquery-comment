@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <meta name=description content="">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <title>Jquery Comment Plugin</title>
+        
+        <link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel=stylesheet href="../css/jquery.comment.css">
+        <link rel=author href="humans.txt">
+    </head>
+    <body>
+		<div class="container">
+			<div>
+				ARTICLE CONTENT HERE!
+				<pre style="font-size:7pt;">
+list: json
+{
+    "results": {
+        "comments": [
+            {
+                "comment_id": "1",
+                "parent_id": "0",
+                "in_reply_to": null,
+                "element_id": "134",
+                "created_by": "1",
+                "fullname": "Administrator admin",
+                "picture": "../css/images/user_blank_picture.png",
+                "posted_date": "2013-02-27 09:03:25",
+                "text": "Test message one",
+                "attachments": [],
+                "childrens": [
+                    {
+                        "comment_id": "3",
+                        "parent_id": "1",
+                        "in_reply_to": "Administrator admin",
+                        "element_id": "134",
+                        "created_by": "2",
+                        "fullname": "Manager manager",
+                        "picture": "../css/images/user_blank_picture.png",
+                        "posted_date": "2013-02-27 08:48:50",
+                        "text": "Hi, reply for you",
+                        "attachments": [],
+                        "childrens": []
+                    },
+                    {
+                        "comment_id": "2",
+                        "parent_id": "1",
+                        "in_reply_to": "Administrator admin",
+                        "element_id": "134",
+                        "created_by": "1",
+                        "fullname": "Administrator admin",
+                        "picture": "../css/images/user_blank_picture.png",
+                        "posted_date": "2013-02-26 11:30:44",
+                        "text": "Test message level 2",
+                        "attachments": [],
+                        "childrens": [
+                            {
+                                "comment_id": "4",
+                                "parent_id": "2",
+                                "in_reply_to": "Administrator admin",
+                                "element_id": "134",
+                                "created_by": "2",
+                                "fullname": "Manager manager",
+                                "picture": "../css/images/user_blank_picture.png",
+                                "posted_date": "2013-02-27 08:50:05",
+                                "text": "replied as level 3",
+                                "attachments": [],
+                                "childrens": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "total_comment": 4,
+        "user": {
+            "user_id": 1,
+            "fullname": "Administrator admin",
+            "picture": "../css/images/user_blank_picture.png",
+            "is_logged_in": true,
+            "is_add_allowed": true,
+            "is_edit_allowed": true
+        }
+    }
+}					
+				</pre>
+			</div>
+			<div class="comment-container">
+	
+			</div>	
+
+		</div>
+		
+		<!-- jslibs -->
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.min.js"></script>
+
+		<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+
+		<script src="../js/jquery.timeago.js"></script>
+		<script src="../js/jquery.autogrow-textarea.js"></script>
+		<script src="../js/jquery.comment.js"></script>
+		<!-- local page js -->
+		<script>
+		$(document).ready(function() {
+
+			$('div.comment-container').comment({
+				title: 'Comments',
+				url_get: 'articles/id/1/comments/list',
+				url_input: 'articles/id/1/comments/input',
+				url_delete: 'articles/id/1/comments/delete',
+				limit: 10,
+				auto_refresh: false,
+				refresh: 10000,
+				transition: 'slideToggle',
+			});
+
+		});	
+		</script>
+    </body>
+</html>
