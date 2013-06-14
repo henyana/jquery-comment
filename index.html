@@ -50,8 +50,24 @@
 <p>Some todo features:</p>
 <ul>
   <li>Upload files (images or docs) to the comments,</li>
+  <li>...</li>
   <li>Etc.</li>
 </ul>
+
+<h3>
+<a name="file-structure" class="anchor" href="#file-structure"><span class="octicon octicon-link"></span></a>File Structure</h3>
+
+<pre>
+  <code>
+  jquery-comment/
+  ├── css/
+  │   ├── jquery.comment.css
+  └── js/
+      ├── jquery.autogrow-textarea.js
+      ├── jquery.timeago.js
+      └── jquery.comment.js
+  </code>
+</pre>
 
 <h3>
 <a name="json-data-structure" class="anchor" href="#json-data-structure"><span class="octicon octicon-link"></span></a>JSON Data Structure</h3>
@@ -126,6 +142,63 @@
         }
     }
 </code></pre>
+
+<h3>
+<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to Use</h3>
+
+<pre>
+  <code>
+<!doctype html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <meta name=description content="">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <title>Jquery Comment Plugin</title>
+        
+        <link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel=stylesheet href="../css/jquery.comment.css">
+    </head>
+    <body>
+    <div class="container">
+
+      <div class="comment-container"></div> 
+
+    </div>
+    
+    <!-- jslibs -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.min.js"></script>
+
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+
+    <script src="../js/jquery.timeago.js"></script>
+    <script src="../js/jquery.autogrow-textarea.js"></script>
+    <script src="../js/jquery.comment.js"></script>
+    
+    <!-- local page js -->
+    <script>
+    $(document).ready(function() {
+
+      $('div.comment-container').comment({
+        title: 'Comments',
+        url_get: 'articles/id/1/comments/list',
+        url_input: 'articles/id/1/comments/input',
+        url_delete: 'articles/id/1/comments/delete',
+        limit: 10,
+        auto_refresh: false,
+        refresh: 10000,
+        transition: 'slideToggle',
+      });
+
+    }); 
+    </script>
+    </body>
+</html>
+  </code>
+</pre>
 
 <h3>
 <a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h3>
